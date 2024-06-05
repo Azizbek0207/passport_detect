@@ -1,10 +1,10 @@
 [Unit]
-Description=Django CI/CD project daemon
+Description=Django CI/CD backend daemon
 After=network.target
 
 [Service]
-WorkingDirectory=/var/www/tasks_cicd/project1/backend
-ExecStart=/var/www/tasks_cicd/project1/backend/.venv/bin/gunicorn --workers 1 --bind unix:/var/www/tasks_cicd/project1/backend/backend.sock root.wsgi:application
+WorkingDirectory=/var/www/azz_ci_cd/backend
+ExecStart=/var/www/azz_ci_cd/backend/.venv/bin/gunicorn --workers 1 --bind unix:/var/www/azz_ci_cd/backend/backend.sock passport_detect.wsgi:application
 
 [Install]
 WantedBy=multi-user.target

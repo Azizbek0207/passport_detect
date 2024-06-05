@@ -15,5 +15,8 @@ jobs:
           host: 146.190.85.59
           username: root
           password: ${{ secrets.PASSWORD }}
-          script: |            
-            whoami
+          script: |
+            cd /var/www/azz_ci_cd/backend
+            git pull
+            systemctl restart gunicorn.service
+            systemctl reload nginx.service

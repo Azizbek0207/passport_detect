@@ -15,8 +15,6 @@ class ImageUploadView(FormView):
     form_class = ImageUploadForm
     success_url = reverse_lazy('passport_info')
 
-
-
     def form_valid(self, form):
         image = form.cleaned_data['image']
         text = pytesseract.image_to_string(Image.open(image), lang='eng')
